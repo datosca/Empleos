@@ -1,1 +1,24 @@
-Empleos relacionados con IA:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleos en IA</title>
+</head>
+<body>
+  <h1>Lista de Empleos en IA</h1>
+  <pre id="empleos-content"></pre>
+
+  <script>
+    fetch('https://raw.githubusercontent.com/datosca/Empleos/main/empleos.txt')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('empleos-content').textContent = data;
+      })
+      .catch(error => {
+        console.error('Error al cargar el archivo:', error);
+      });
+  </script>
+</body>
+</html>
+
