@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empleos en IA</title>
+  <title>Empleos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    #empleos-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      white-space: pre-wrap; /* Esto mantiene los saltos de línea */
+      word-wrap: break-word;
+      font-size: 16px;
+    }
+    h1 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Lista de Empleos en IA</h1>
-  <pre id="empleos-content"></pre>
+
+  <h1>Empleos en Ecuador (IA)</h1>
+  <div id="empleos-content">Cargando...</div>
 
   <script>
     fetch('https://raw.githubusercontent.com/datosca/Empleos/main/empleos')
@@ -17,8 +40,11 @@
       })
       .catch(error => {
         console.error('Error al cargar el archivo:', error);
+        document.getElementById('empleos-content').textContent = 'No se pudo cargar la información.';
       });
   </script>
+
 </body>
 </html>
+
 
