@@ -10,7 +10,7 @@
   <pre id="empleos-content"></pre>
 
   <script>
-    fetch('https://raw.githubusercontent.com/datosca/Empleos/main/empleos.txt')
+    fetch('https://raw.githubusercontent.com/datosca/Empleos/main/empleos')
       .then(response => response.text())
       .then(data => {
         document.getElementById('empleos-content').textContent = data;
